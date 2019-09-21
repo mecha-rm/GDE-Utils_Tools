@@ -25,11 +25,22 @@ int main()
 	std::cout << "PI (Float): " << pif() << std::endl;
 	std::cout << std::endl;
 
+
 	util::math::Vec4 clrVec(12.0F, 252.0F, 129.0F, 9.0F);
 	std::cout << "RGBA Int to Decimal (12, 252, 129, 9.0F) (alpha out of bounds): " << util::RGBAIntToDecimal(clrVec.x, clrVec.y, clrVec.z, clrVec.w).toString() << std::endl;
 	clrVec = util::RGBAIntToDecimal(clrVec.x, clrVec.y, clrVec.z, clrVec.w);
 	std::cout << "Converting it back: " << util::RGBADecimalToInt(clrVec).toString() << std::endl;
 	std::cout << "RGBA Decimal to Int (0.5, 0.25, 1.9, 0.2F) (b out of bounds): " << util::RGBADecimalToInt(0.5F, 0.25F, 1.9F, 0.2F).toString() << std::endl;
+
+	std::cout << std::endl;
+	util::math::Vec2 lvec1 = util::math::Vec2(2.0F, 8.0F);
+	util::math::Vec2 lvec2 = util::math::Vec2(6.0F, 10.0F);
+
+	std::cout << "lvec1: " << lvec1.toString() << std::endl;
+	std::cout << "lvec2: " << lvec2.toString() << std::endl;
+	std::cout << "t: 3/4" << std::endl;
+
+	std::cout << "\nLERP: " << util::math::Vec2::LERP(lvec1, lvec2, 0.75F).toString() << std::endl;
 
 	std::cout << std::endl;
 
