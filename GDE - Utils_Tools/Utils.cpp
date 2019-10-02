@@ -68,6 +68,24 @@ bool util::equalsIgnoreCase(std::string str1, std::string str2)
 	return str1 == str2; // returning whether the two are equal
 }
 
+// replaces every instance of a set of characters in a string with another set of characters.
+std::string util::replaceSubstring(std::string str, std::string oldSubstr, std::string newSubstr, bool ignoreCase)
+{
+	unsigned int index; // the index of the most recently found oldSubstr
+
+	// first set is if ignoreCase is false, second set is if ignoreCase is true.
+	while ((ignoreCase == false && str.find(oldSubstr) != std::string::npos) || 
+		   (ignoreCase == true && util::toLower(str).find(util::toLower(oldSubstr)) != std::string::npos))
+	{
+		// checks if case sensitivity was requested.
+		index = (ignoreCase) ? index = util::toLower(str).find(util::toLower(oldSubstr)) : index = str.find(oldSubstr);
+
+		str.replace(index, oldSubstr.length(), newSubstr); // replaces the old string with the new string.
+	}
+
+	return str;
+}
+
 // checks if a string is an integer.
 bool util::isInt(std::string str)
 {

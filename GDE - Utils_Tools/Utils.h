@@ -20,6 +20,12 @@ namespace util
 	// checks if two strings are equal, ignoring case diffrences.
 	bool equalsIgnoreCase(std::string, std::string);
 
+	// replaces every instance of a set of characters in a string with another set of characters.
+	// oldSubstr: the string segment that's being removed
+	// newSubstr: the string that will be put in its place.
+	// ignoreCase: if false, then the function is case sensitive. If true, then the function ignores cases when looking for oldSubstr.
+	std::string replaceSubstring(std::string str, std::string oldSubstr, std::string newSubstr, bool ignoreCase = false);
+
 	// checks to see if a string is an integer; this is improved from isNum.
 	bool isInt(std::string str);
 

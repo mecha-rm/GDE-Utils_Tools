@@ -33,6 +33,28 @@ int main()
 	std::cout << "RGBA Decimal to Int (0.5, 0.25, 1.9, 0.2F) (b out of bounds): " << util::RGBADecimalToInt(0.5F, 0.25F, 1.9F, 0.2F).toString() << std::endl;
 
 	std::cout << std::endl;
+	// STRING REPLACEMENT
+	// Test 1
+	std::string str_r1 = "How much wood would a woodchuck chuck if a woodchuck could chuck wood?";
+	std::string str_r2 = "ice";
+	std::cout << "Sentence: " + str_r1 << std::endl;
+	std::cout << "Replacing \"wood\" with \"" + str_r2 + "\"." << std::endl;
+	std::cout << "Result: " << util::replaceSubstring(str_r1, "wood", str_r2) << std::endl; // util::repl
+
+	std::cout << std::endl;
+	// Test 2
+	str_r1 = "Hello! hello! Hello! hello! HELLO! HellO! hello! heLLO!";
+	str_r2 = "Hey";
+	std::cout << "Sentence: " + str_r1 << std::endl;
+	std::cout << "Replacing \"hello\" (case sensitive) with \"" + str_r2 + "\"." << std::endl;
+	std::cout << "Result: " << util::replaceSubstring(str_r1, "hello", str_r2) << std::endl; // util::repl
+
+	// Test 3
+	std::cout << "\nReplacing every instance of hello with" << str_r2 << ", regardless of the case (i.e. it's case insensitive)." << std::endl;
+	std::cout << "Result: " << util::replaceSubstring(str_r1, "hello", str_r2, true) << std::endl;
+	std::cout << std::endl;
+
+	std::cout << std::endl;
 	util::math::Vec2 lvec1 = util::math::Vec2(2.0F, 8.0F);
 	util::math::Vec2 lvec2 = util::math::Vec2(6.0F, 10.0F);
 
