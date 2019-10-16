@@ -63,7 +63,8 @@ int main()
 	std::cout << "t: 3/4" << std::endl;
 
 	std::cout << "\nLERP: " << util::math::Vec2::LERP(lvec1, lvec2, 0.75F).toString() << std::endl;
-
+	std::cout << "lvec1 dotLength lvec2: " << lvec1.dotLength(lvec2, true) << std::endl;
+	std::cout << "lvec1 dotAngle lvec2: " << lvec1.dotAngle(lvec2) << std::endl;
 	std::cout << std::endl;
 
 	std::cout << rand() << std::endl;
