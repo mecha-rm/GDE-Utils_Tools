@@ -19,6 +19,15 @@ using namespace util::math;
 
 int main()
 {
+	std::vector<int*> testVector;
+	int* tv1 = new int(4);
+	testVector.push_back(new int(5));
+	testVector.push_back(new int(2));
+	testVector.push_back(new int(1));
+	util::addToVector(testVector, tv1);
+	util::addToVector(testVector, tv1);
+	util::removeFromVector(testVector, tv1);
+
 	srand(time(0));
 	std::cout << "PI: " << pi() << std::endl;
 	std::cout << "PI (Double): " << pid() << std::endl;
@@ -62,7 +71,7 @@ int main()
 	std::cout << "lvec2: " << lvec2.toString() << std::endl;
 	std::cout << "t: 3/4" << std::endl;
 
-	std::cout << "\nLERP: " << util::math::Vec2::LERP(lvec1, lvec2, 0.75F).toString() << std::endl;
+	std::cout << "\nLERP: " << util::math::lerp(lvec1, lvec2, 0.75F).toString() << std::endl;
 	std::cout << "lvec1 dotLength lvec2: " << lvec1.dotLength(lvec2, true) << std::endl;
 	std::cout << "lvec1 dotAngle lvec2: " << lvec1.dotAngle(lvec2) << std::endl;
 	std::cout << std::endl;
