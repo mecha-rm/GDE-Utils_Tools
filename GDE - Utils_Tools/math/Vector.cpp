@@ -134,15 +134,6 @@ float util::math::Vec2::dotAngle(const Vec2 & v2, bool inDegrees) const
 	//return theta;
 }
 
-// calculates LERP and overrides the values within the current object. The current object is treated as v1, and the passed value is v2.
-void util::math::Vec2::LERP(util::math::Vec2& v2, float t) { *this = LERP(*this, v2, t); }
-
-util::math::Vec2 util::math::Vec2::LERP(util::math::Vec2& v1, util::math::Vec2& v2, float t)
-{
-	// Equation: p_cur = (1 - t)p1 + (t)(p2)
-	return ((1.0F - t) * v1 + t * v2);
-}
-
 // gets the vector as a string
 std::string util::math::Vec2::toString() const { return "(" + std::to_string(x) + ", " + std::to_string(y) + ")"; }
 

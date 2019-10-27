@@ -95,12 +95,6 @@ namespace util
 			// calculates the angle of the dot product. The value of 'inDegress' determines whether it's converted to degrees or not
 			float dotAngle(const Vec2& v2, bool inDegrees = false) const;
 
-			// calculates LERP and overrides the values within the current object. The current object is treated as v1, and the passed value is v2.
-			void LERP(util::math::Vec2& v2, float t);
-
-			// calculate LERP using a provided t value.
-			static util::math::Vec2 LERP(util::math::Vec2& v1, util::math::Vec2& v2, float t);
-
 			// gets the vector as a string.
 			std::string toString() const override;
 
