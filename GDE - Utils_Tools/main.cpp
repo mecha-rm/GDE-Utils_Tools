@@ -8,7 +8,7 @@
 // #include "math/Vector.h"
 // #include "Array.h"
 
-#include "UtilsToolsLib.h"
+#include "utils/UtilsToolsLib.h"
 #include <iostream>
 
 #include <random>
@@ -19,6 +19,34 @@ using namespace util::math;
 
 int main()
 {
+	srand(time(0));
+
+	if (true)
+	{
+		Box3D x;
+		x.position = Vec3(10, 5, 0);
+		x.width = 30;
+		x.height = 30;
+		x.depth = 30;
+		x.rotation = { 13, 2, -3 };
+
+		x.rotationOrder[0] = 'x';
+		x.rotationOrder[1] = 'y';
+		x.rotationOrder[2] = 'z';
+
+		Box3D y;
+		y.position = Vec3(0.5, 4, 1);
+		y.width = 35;
+		y.height = 23;
+		y.depth = 23;
+
+		y.rotation = { 10, 1, -15 };
+		y.rotationOrder[0] = 'z';
+		y.rotationOrder[1] = 'x';
+		y.rotationOrder[2] = 'y';
+
+		std::cout << std::boolalpha << obbCollision(x, true, y, true) << std::endl;
+	}
 	std::vector<int*> testVector;
 	int* tv1 = new int(4);
 	testVector.push_back(new int(5));
@@ -28,12 +56,19 @@ int main()
 	util::addToVector(testVector, tv1);
 	util::removeFromVector(testVector, tv1);
 
-	srand(time(0));
+	
 	std::cout << "PI: " << pi() << std::endl;
 	std::cout << "PI (Double): " << pid() << std::endl;
 	std::cout << "PI (Float): " << pif() << std::endl;
 	std::cout << std::endl;
 
+	std::string sti = "123";
+	std::string std = "124.54";
+	std::cout << "String '" + sti + "' to Int: " << convertString<int>(sti) << std::endl;
+	std::cout << "String '" + std + "' to Double: " << convertString<double>(std) << std::endl;
+	std::cout << "String '" + std + "' to Float: " << convertString<float>(std) << std::endl;
+
+	std::cout << std::endl;
 
 	util::math::Vec4 clrVec(12.0F, 252.0F, 129.0F, 9.0F);
 	std::cout << "RGBA Int to Decimal (12, 252, 129, 9.0F) (alpha out of bounds): " << util::RGBAIntToDecimal(clrVec.x, clrVec.y, clrVec.z, clrVec.w).toString() << std::endl;
