@@ -14,12 +14,134 @@
 #include <random>
 #include <ctime>
 
-using namespace util;
-using namespace util::math;
+
+template<typename T, typename A>
+void printVector(const std::vector<T, A>);
+template<typename T>
+void printArray(const T* arr, const unsigned int SIZE);
+
+void sortTest();
+
+// prints out a vector
+template<typename T, typename A>
+void printVector(const std::vector<T, A> vector)
+{
+	for (int i = 0; i < vector.size(); i++)
+	{
+		std::cout << vector[i];
+
+		if (i + 1 < vector.size())
+			std::cout << ", ";
+	}
+}
+
+// prints out a dynamic array.
+template<typename T>
+void printArray(const T* arr, const unsigned int SIZE)
+{
+	// pritns out all values from the list
+	for (int i = 0; i < SIZE; i++)
+	{
+		std::cout << arr[i];
+
+		if (i + 1 < SIZE)
+			std::cout << ", ";
+	}
+}
+
+// sort tester function
+void sortTest()
+{
+	const int SIZE = 10;
+
+	// the first list, which is a int vector.
+	int list1[SIZE]{ 1, 7, 2, -1, 4, 3, 3, 9, 5, 10 };
+
+	// the third list, which is a dynamic double array.
+	double* list2 = new double[SIZE];
+
+	for (int i = 0; i < SIZE; i++)
+		list2[i] = SIZE - i;
+
+	// the second list, which is a static float array.
+	std::vector<float> list3;
+	
+	list3.push_back(1.24F);
+	list3.push_back(3.64F);
+	list3.push_back(1.13F);
+	list3.push_back(5.55F);
+	list3.push_back(2.14F);
+	list3.push_back(2.14F);
+	list3.push_back(0.144F);
+	list3.push_back(0.943F);
+	list3.push_back(11.02F);
+	list3.push_back(14.0F);
+		
+	list3.resize(SIZE);
+
+
+	// bubble sort
+	{
+		util::time::Timer t1, t2, t3;
+
+		std::cout << "\nBefore Sort:" << std::endl;
+
+		// printing the values before the sort.
+		std::cout << "\nList1:";
+		printArray<int>(list1, SIZE);
+		
+		std::cout << "\nList2: ";
+		printArray<double>(list2, SIZE);
+
+		std::cout << "\nList3: ";
+		printVector(list3);
+		
+		std::cout << "\n\n";
+
+		// runs sorting algorithms and times them.
+		t1.start();
+		util::sort::bubbleSort<int>(list1, SIZE);
+		t1.stop();
+
+		t2.start();
+		util::sort::bubbleSort<double>(list2, SIZE);
+		t2.stop();
+
+		t3.start();
+		util::sort::bubbleSort<float>(list3);
+		t3.stop();
+
+		std::cout << "\After Sort:" << std::endl;
+
+		// printing the values after the sort.
+		std::cout << "\nList1:";
+		printArray<int>(list1, SIZE);
+		std::cout << "\nTime (Milliseconds): " << t1.getDurationInMilliseconds() << std::endl;
+
+		std::cout << "\nList2: ";
+		printArray<double>(list2, SIZE);
+		std::cout << "\nTime (Milliseconds): " << t2.getDurationInMilliseconds() << std::endl;
+
+		std::cout << "\nList3: ";
+		printVector(list3);
+		std::cout << "\nTime (Milliseconds): " << t3.getDurationInMilliseconds() << std::endl;
+	}
+
+	std::cout << std::endl;
+	delete[] list2;
+}
 
 int main()
 {
+	// seeds the randomizer
 	srand(time(0));
+
+	using namespace util;
+	using namespace util::math;
+
+	sortTest();
+
+	system("pause");
 
 	if (true)
 	{

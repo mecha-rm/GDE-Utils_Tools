@@ -1,4 +1,4 @@
-#include "Colour.h"
+#include "Color.h"
 
 // converts RGB from int to decimal.
 util::math::Vec3 util::RGBIntToDecimal(int r, int g, int b)

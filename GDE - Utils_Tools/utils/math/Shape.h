@@ -1,5 +1,4 @@
-#ifndef SHAPES_H
-#define SHAPES_H
+#pragma once
 
 #include "Vector.h"
 
@@ -7,124 +6,58 @@ namespace util
 {
 	namespace math
 	{
-		// standard shape
-		class Shape
+		// Circle
+		struct Circle
 		{
-		public:
-			Shape();
 
-			// get position x
-			float getPositionX() const;
+			util::math::Vec2 position{};
 
-			// set position x
-			void setPositionX(float x);
-
-			// get position y
-			float getPositionY() const;
-
-			// set position y
-			void setPositionY(float y);
-
-			// translate on the x-axis
-			void translateX(float xt);
-
-			// translate on the y-axis
-			void translateY(float yt);
-
-			virtual std::string toString() = 0;
-
-		private:
-
-		protected:
-			util::math::Vec3 position; // position vector
+			float radius = 0;
 		};
 
-		// 2-dimensional shape
-		class Shape2D : public Shape
+		// Sphere
+		struct Sphere
 		{
-		public:
-			Shape2D(const float SIDES);
+			util::math::Vec3 position{};
 
-			// gets the position of the shape
-			util::math::Vec2 getPosition() const;
-
-			// sets the position of the shape
-			void setPosition(util::math::Vec2 pos);
-
-			// sets the position of the shape
-			void setPosition(float x, float y);
-
-			// moves the shape
-			void translate(util::math::Vec2 translation);
-
-			// moves the shape
-			void translate(float xt, float yt);
-
-			// calculates the area of the shape
-			virtual float area() = 0;
-
-			virtual std::string toString() = 0;
-
-			const float SIDES; // number of sides
-
-		private:
-
-		protected:
-
+			float radius = 0;
 		};
 
-		// 3-dimensional shape
-		class Shape3D : public Shape
+		
+		// Square
+		struct Box2D
 		{
-		public:
-			Shape3D(const unsigned int FACES, const unsigned int EDGES, const unsigned int VERTICES);
+			// position
+			util::math::Vec2 position{};
 
-			// gets the position of the shape
-			util::math::Vec3 getPosition() const;
+			// width
+			float width = 0;
 
-			// sets the position of the shape
-			void setPosition(util::math::Vec3 pos);
+			// height
+			float height = 0;
 
-			// sets the position of the shape
-			void setPosition(float x, float y, float z);
+			// rotation
+			// make sure to note if the rotation is in degrees or radians when rotating.
+			float rotation = 0;
+		};
 
-			// get position z
-			float getPositionZ() const;
+		// Cube
+		struct Box3D
+		{
+			util::math::Vec3 position;
 
-			// get position z
-			void setPositionZ(float z);
+			// dimensions
+			float width = 0;
+			float height = 0;
+			float depth = 0;
 
-			// moves the shape (x, y, z)
-			void translate(util::math::Vec3 translation);
+			// rotation on x, y, and z axis.
+			// make sure to note if they are in degrees or radians when doing collision.
+			util::math::Vec3 rotation{};
 
-			// translates the shape (x, y, z)
-			void translate(float xt, float yt, float zt);
-
-			// translate along the z-axis
-			void translateZ(float zt);
-
-			// calculates the volume of the shape
-			virtual float volume() = 0;
-
-			// toString() function for shapes
-			virtual std::string toString() = 0;
-
-			const unsigned int FACES; // number of faces
-			const unsigned int EDGES; // number of edges
-			const unsigned int VERTICES; // number of vertices
-
-		private:
-
-
-		protected:
+			// rotation order.
+			char rotationOrder[3]{ ' ', ' ', ' ' };
 		};
 	}
 }
-//class Circle : public Shape
-//{
-//	Circle(util::math::Vec2 pos, float radius);
-//
-//	Circle(util::math::Vec3 pos, float radius);
-//};
 
-#endif // !SHAPES_H

@@ -120,7 +120,7 @@ const std::string util::Element::getMetalTypeAsString() const
 std::string util::Element::toString() const
 {
 	return "Atomic #: " + std::to_string(atomicNum) + " | Symbol: " + symbol + " | Name: " + name
-		+ " | Atomic Mass: " + std::to_string(atomicMass) + " | State of Matter (0 Â°C): " + getStateOfMatterAsString()
+		+ " | Atomic Mass: " + std::to_string(atomicMass) + " | State of Matter (0 °C): " + getStateOfMatterAsString()
 		+ " | Metal Category: " + getMetalCategoryAsString() + " | Metal Type: " + getMetalTypeAsString();
 }
 
