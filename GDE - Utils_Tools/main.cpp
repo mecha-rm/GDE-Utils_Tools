@@ -14,12 +14,16 @@
 #include <random>
 #include <ctime>
 
-
+// print vector and print array
 template<typename T, typename A>
 void printVector(const std::vector<T, A>);
 template<typename T>
 void printArray(const T* arr, const unsigned int SIZE);
 
+// randomization test
+void randomTest();
+
+// sort test
 void sortTest();
 
 // prints out a vector
@@ -32,6 +36,70 @@ void printVector(const std::vector<T, A> vector)
 
 		if (i + 1 < vector.size())
 			std::cout << ", ";
+	}
+}
+
+// does a randomization test
+void randomTest()
+{
+	std::cout << "\nRandom Test\n***********" << std::endl;
+
+	// integer tests
+	{
+		// temporary lower bound and upper bound
+		int l = 0, u = 1;
+		// include upper bound
+		bool incU = true;
+		
+		// [0, 1] - include upper bound.
+		l = 0;
+		u = 1;
+		incU = true;
+		std::cout << "randInt(" << l << ", " << u << ", " << std::boolalpha << incU << ") = "
+			<< util::rand::randInt(l, u, incU) << std::endl;
+
+		// [-2,-1] - include upper bound.
+		l = -2;
+		l = -1;
+		incU = true;
+		std::cout << "randInt(" << l << ", " << u << ", " << std::boolalpha << incU << ") = "
+			<< util::rand::randInt(l, u, incU) << std::endl;
+
+		// [-, -] - both bounds are negative; upper bound is not included.
+		l = -30;
+		u = -5;
+		incU = false;
+		std::cout << "randInt(" << l << ", " << u << ", " << std::boolalpha << incU << ") = "
+			<< util::rand::randInt(l, u, incU) << std::endl;
+
+		// [-,+] - negative to positive; upper bound is not included.
+		l = -50;
+		u = 100;
+		incU = false;
+
+		std::cout << "randInt(" << l << ", " << u << ", " << std::boolalpha << incU << ") = "
+			<< util::rand::randInt(l, u, incU) << std::endl;
+	}
+
+	std::cout << std::endl;
+
+	// decimal tests
+	{
+		// temporary lower bound and upper bound
+		double l = 0, u = 1;
+		// include upper bound
+		bool incU = true;
+
+		// standard test; TODO: make function that provides additional decimal values.
+
+		// decimal test (both have 4 places)
+		l = 1.23;
+		u = 2.91;
+		incU = true;
+		std::cout << "randDecimal(" << l << ", " << u << ", " << std::boolalpha << incU << ") = "
+			<< util::rand::randDecimal(l, u, incU) << std::endl;
+
+		// 
 	}
 }
 
@@ -133,11 +201,18 @@ void sortTest()
 
 int main()
 {
+	double dx = 1.242;
+	float fx = 1.242F;
+	std::cout << "Double: " << std::to_string(dx) << std::endl;
+	std::cout << "Float: " << std::to_string(fx) << std::endl;
+
 	// seeds the randomizer
 	srand(time(0));
 
 	using namespace util;
 	using namespace util::math;
+
+	randomTest();
 
 	sortTest();
 
@@ -233,7 +308,7 @@ int main()
 	std::cout << "lvec1 dotAngle lvec2: " << lvec1.dotAngle(lvec2) << std::endl;
 	std::cout << std::endl;
 
-	std::cout << rand() << std::endl;
+	std::cout << std::rand() << std::endl;
 
 	util::math::Vec3 vec(3, 4, 0);
 	// vec.normalize();
