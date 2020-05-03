@@ -1,9 +1,0 @@
-﻿  main.cpp
-C:\Users\roder\source\repos\GDE - Utils_Tools\main.cpp(22,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\roder\source\repos\GDE - Utils_Tools\main.cpp(29,134): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\roder\source\repos\GDE - Utils_Tools\main.cpp(29,124): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\roder\source\repos\GDE - Utils_Tools\main.cpp(29,114): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\roder\source\repos\GDE - Utils_Tools\main.cpp(30,60): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\roder\source\repos\GDE - Utils_Tools\main.cpp(30,50): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\roder\source\repos\GDE - Utils_Tools\main.cpp(30,40): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
-  GDE - Utils_Tools.vcxproj -> C:\Users\roder\source\repos\GDE - Utils_Tools\x64\Debug\GDE - Utils_Tools.exe
