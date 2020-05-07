@@ -16,11 +16,13 @@ namespace util
 
 			friend std::ostream& operator<<(std::ostream&, const Vec&); // << operator
 
+			// calculates the length of the vector.
 			virtual float length() const = 0;
 
 			// normalizes the vector, replacing its current values.
 			virtual void normalize() = 0;
 
+			// to string function for vectors.
 			virtual std::string toString() const = 0;
 
 		protected:
@@ -44,7 +46,9 @@ namespace util
 		typedef class Vec2 : public Vec
 		{
 		public:
-			Vec2(float x = 0.0F, float y = 0.0F);
+			Vec2() = default;
+
+			Vec2(float x, float y);
 
 			// istream
 			friend std::istream& operator>>(std::istream&, Vec2&);
@@ -55,6 +59,7 @@ namespace util
 
 			// equality operator
 			bool operator==(const Vec2&) const; // checking if two vectors are equal
+			bool operator!=(const Vec2&) const; // ineqaulity operator.
 
 			Vec2 operator*(float) const; // scalar multiplication
 			friend Vec2 operator*(float, const Vec2&); // scalar times vec
@@ -105,7 +110,9 @@ namespace util
 		typedef class Vec3 : public Vec
 		{
 		public:
-			Vec3(float x = 0.0F, float y = 0.0F, float z = 0.0F);
+			Vec3() = default;
+
+			Vec3(float x, float y, float z);
 
 			Vec3(Vec2 vec, float z = 0.0F);
 
@@ -116,6 +123,7 @@ namespace util
 			float& operator[](const int index); // editing
 
 			bool operator==(const Vec3&) const; // checking if two vectors are equal
+			bool operator!=(const Vec3&) const; // ineqaulity operator.
 
 			Vec3 operator*(float) const; // scalar multiplication
 			friend Vec3 operator*(float, const Vec3&); // scalar times vec
@@ -171,7 +179,9 @@ namespace util
 		typedef class Vec4 : public Vec
 		{
 		public:
-			Vec4(float x = 0.0F, float y = 0.0F, float z = 0.0F, float w = 0.0F);
+			Vec4() = default;
+
+			Vec4(float x, float y, float z, float w);
 
 			Vec4(Vec3 vec, float w = 0.0F);
 
@@ -183,6 +193,7 @@ namespace util
 			float& operator[](const int index);
 
 			bool operator==(const Vec4&) const; // checking if two vectors are equal
+			bool operator!=(const Vec4&) const; // ineqaulity operator.
 
 			Vec4 operator*(float) const;
 			friend Vec4 operator*(float, const Vec4&); // scalar times vec

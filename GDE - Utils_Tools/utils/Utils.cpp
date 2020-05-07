@@ -1,3 +1,9 @@
+/*
+ * Date: 05/03/2020
+ * References:
+	* https://stackoverflow.com/questions/16605967/set-precision-of-stdto-string-when-converting-floating-point-values
+*/
+
 #include "Utils.h"
 #include "math/LargeInt.h"
 #include "math/Quaternion.h"
@@ -126,6 +132,56 @@ bool util::isNum(std::string str)
 		}
 	}
 	return true;
+}
+
+// string to integer
+int util::stringToInt(const std::string& str) 
+{ 
+	return convertString<int>(str); 
+}
+
+// string to short
+short util::stringToShort(const std::string& str)
+{ 
+	return convertString<short>(str); 
+}
+
+// string to long
+long util::stringToLong(const std::string& str) 
+{ 
+	return convertString<long>(str);
+}
+
+// string to double
+double util::stringToDouble(const std::string& str) 
+{ 
+	return convertString<double>(str); 
+}
+
+// string to float
+float util::stringToFloat(const std::string& str)
+{
+	return convertString<float>(str);
+}
+
+// converts a double to a string.
+std::string util::doubleToString(double value)
+{
+	// if converted using the standard to_string, extra, unnecesscary zero digits are included.
+	// this fixes that problem.
+	std::ostringstream out;
+	out << value;
+	return out.str();
+}
+
+// converts a float to a string.
+std::string util::floatToString(float value)
+{
+	// if converted using the standard to_string, extra, unnecesscary zero digits are included.
+	// this fixes that problem.
+	std::ostringstream out;
+	out << value;
+	return out.str();
 }
 
 // fills in zeros for integers converted to strings.

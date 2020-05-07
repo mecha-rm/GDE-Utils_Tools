@@ -79,6 +79,27 @@ namespace util
 		return val;
 	}
 
+	// string to int
+	int stringToInt(const std::string& str);
+
+	// string to short
+	short stringToShort(const std::string& str);
+
+	// string to long
+	long stringToLong(const std::string& str);
+
+	// string to double
+	double stringToDouble(const std::string& str);
+
+	// string to int
+	float stringToFloat(const std::string& str);
+
+	// converts a double to a string
+	std::string doubleToString(double value);
+
+	// converts a float to a string
+	std::string floatToString(float value);
+
 	// returns a string of size 'LENGTH' with zeros filling in the rest of the string's size.
 	// if the length provided is less than the length of the number provided, the number is truncated.
 	std::string zeroFill(int num, const unsigned int LENGTH);

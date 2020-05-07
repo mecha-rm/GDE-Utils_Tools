@@ -51,6 +51,9 @@ void randomTest()
 		// include upper bound
 		bool incU = true;
 		
+		// generates a random int
+		std::cout << "randInt() = " << util::rand::randInt() << std::endl;
+
 		// [0, 1] - include upper bound.
 		l = 0;
 		u = 1;
@@ -90,16 +93,43 @@ void randomTest()
 		// include upper bound
 		bool incU = true;
 
-		// standard test; TODO: make function that provides additional decimal values.
+		// standard test (no bounds)
+		std::cout << "randDecimal() = " << util::rand::randDecimal() << std::endl;
 
-		// decimal test (both have 4 places)
+		// decimal test (both have 2 places)
 		l = 1.23;
 		u = 2.91;
 		incU = true;
 		std::cout << "randDecimal(" << l << ", " << u << ", " << std::boolalpha << incU << ") = "
 			<< util::rand::randDecimal(l, u, incU) << std::endl;
 
-		// 
+		// decimal test (different amount of places)
+		l = 9.2423;
+		u = 42.46;
+		incU = true;
+		std::cout << "randDecimal(" << l << ", " << u << ", " << std::boolalpha << incU << ") = "
+			<< util::rand::randDecimal(l, u, incU) << std::endl;
+
+		// decimal test (negative decimals)
+		l = -40.163;
+		u = -4.129;
+		incU = false;
+		std::cout << "randDecimal(" << l << ", " << u << ", " << std::boolalpha << incU << ") = "
+			<< util::rand::randDecimal(l, u, incU) << std::endl;
+
+		// decimal test (positive and negative)
+		l = -20.163;
+		u = 30.129;
+		incU = false;
+		std::cout << "randDecimal(" << l << ", " << u << ", " << std::boolalpha << incU << ") = "
+			<< util::rand::randDecimal(l, u, incU) << std::endl;
+
+		// decimal test (different number of digits)
+		l = -20.1;
+		u = 0.0;
+		incU = false;
+		std::cout << "randDecimal(" << l << ", " << u << ", " << std::boolalpha << incU << ") = "
+			<< util::rand::randDecimal(l, u, 6, incU) << std::endl;
 	}
 }
 
@@ -201,10 +231,10 @@ void sortTest()
 
 int main()
 {
-	double dx = 1.242;
-	float fx = 1.242F;
-	std::cout << "Double: " << std::to_string(dx) << std::endl;
-	std::cout << "Float: " << std::to_string(fx) << std::endl;
+	// double dx = 1.242;
+	// float fx = 1.242F;
+	// std::cout << "Double: " << util::doubleToString(dx) << std::endl;
+	// std::cout << "Float: " << util::floatToString(fx) << std::endl;
 
 	// seeds the randomizer
 	srand(time(0));

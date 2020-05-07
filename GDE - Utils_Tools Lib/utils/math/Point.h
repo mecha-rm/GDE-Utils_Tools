@@ -2,7 +2,6 @@
 #define POINT_H
 
 #include "Vector.h"
-
 #include <string>
 
 // class for points. It's recommended that the vector classes be used instead.
