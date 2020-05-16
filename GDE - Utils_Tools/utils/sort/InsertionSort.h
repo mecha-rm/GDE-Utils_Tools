@@ -17,7 +17,7 @@ namespace util
 
 		// vector version
 		template<typename T, typename A>
-		void selectionSort(std::vector<T, A>& list)
+		void insertionSort(std::vector<T, A>& list)
 		{
 			// the size of the list.
 			const int SIZE = list.size();
@@ -37,8 +37,8 @@ namespace util
 		}
 
 		// vector version
-		template<typename T, typename A>
-		void selectionSort(T* list, const int SIZE)
+		template<typename T>
+		void insertionSort(T* list, const int SIZE)
 		{
 			// iterates through the sorted list.
 			for (int i = 1, j; i < SIZE; i++)

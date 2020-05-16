@@ -18,13 +18,14 @@
 template<typename T, typename A>
 void printVector(const std::vector<T, A>);
 template<typename T>
-void printArray(const T* arr, const unsigned int SIZE);
+void printArray(const T*, const unsigned int);
 
 // randomization test
 void randomTest();
 
 // sort test
-void sortTest();
+void sortTest(); // default (0)
+void sortTest(int); // mode selection
 
 // prints out a vector
 template<typename T, typename A>
@@ -147,9 +148,25 @@ void printArray(const T* arr, const unsigned int SIZE)
 	}
 }
 
-// sort tester function
+// sorting test with mode 0
 void sortTest()
 {
+	sortTest(0);
+}
+
+/*
+ * 0/1 = Bubble Sort
+ * 2 = Selection Sort
+ * 3 = Insertion Sort
+ * 4 = Merge Sort
+ * 5 = Quick Sort
+*/
+// sort tester function
+void sortTest(int mode)
+{
+	// mode
+	mode = util::clamp(mode, 0, 5);
+
 	const int SIZE = 10;
 
 	// the first list, which is a int vector.
@@ -197,22 +214,96 @@ void sortTest()
 		std::cout << "\n\n";
 
 		// runs sorting algorithms and times them.
-		t1.start();
-		util::sort::bubbleSort<int>(list1, SIZE);
-		t1.stop();
+		// mode selector
+		switch (mode)
+		{
+		case 0: // bubble sort
+		case 1:
+		default:
+			std::cout << "Bubble Sort" << std::endl;
 
-		t2.start();
-		util::sort::bubbleSort<double>(list2, SIZE);
-		t2.stop();
+			t1.start();
+			util::sort::bubbleSort<int>(list1, SIZE);
+			t1.stop();
 
-		t3.start();
-		util::sort::bubbleSort<float>(list3);
-		t3.stop();
+			t2.start();
+			util::sort::bubbleSort<double>(list2, SIZE);
+			t2.stop();
 
-		std::cout << "\After Sort:" << std::endl;
+			t3.start();
+			util::sort::bubbleSort<float>(list3);
+			t3.stop();
+			break;
+
+		case 2: // selection sort
+			std::cout << "Selection Sort" << std::endl;
+
+			t1.start();
+			util::sort::selectionSort<int>(list1, SIZE);
+			t1.stop();
+
+			t2.start();
+			util::sort::selectionSort<double>(list2, SIZE);
+			t2.stop();
+
+			t3.start();
+			util::sort::selectionSort<float>(list3);
+			t3.stop();
+			break;
+
+		case 3: // insertion sort
+			std::cout << "Insertion Sort" << std::endl;
+
+			t1.start();
+			util::sort::insertionSort<int>(list1, SIZE);
+			t1.stop();
+
+			t2.start();
+			util::sort::insertionSort<double>(list2, SIZE);
+			t2.stop();
+
+			t3.start();
+			util::sort::insertionSort<float>(list3);
+			t3.stop();
+			break;
+
+		case 4: // merge sort
+			std::cout << "Merge Sort" << std::endl;
+
+			t1.start();
+			util::sort::mergeSort<int>(list1, SIZE);
+			t1.stop();
+
+			t2.start();
+			util::sort::mergeSort<double>(list2, SIZE);
+			t2.stop();
+
+			t3.start();
+			util::sort::mergeSort<float>(list3);
+			t3.stop();
+			break;
+
+		case 5: // quick sort
+			std::cout << "Quick Sort" << std::endl;
+			// t1.start();
+			// util::sort::quickSort<int>(list1, SIZE);
+			// t1.stop();
+			// 
+			// t2.start();
+			// util::sort::quickSort<double>(list2, SIZE);
+			// t2.stop();
+			// 
+			// t3.start();
+			// util::sort::quickSort<float>(list3);
+			// t3.stop();
+			break;
+
+		}
+
+		std::cout << "\nAfter Sort:" << std::endl;
 
 		// printing the values after the sort.
-		std::cout << "\nList1:";
+		std::cout << "\nList1: ";
 		printArray<int>(list1, SIZE);
 		std::cout << "\nTime (Milliseconds): " << t1.getDurationInMilliseconds() << std::endl;
 
@@ -242,9 +333,12 @@ int main()
 	using namespace util;
 	using namespace util::math;
 
+	// random sort test
 	randomTest();
 
-	sortTest();
+	// array sort test
+	sortTest(3);
+
 
 	system("pause");
 
