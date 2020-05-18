@@ -1,7 +1,6 @@
 /*
  * Date: 04/24/2020
  * Description: quick sort.
-	- selection sort has
 	- this is modelled after the code framework provided by the professor of Algorithms and Data Structures.
  * Resources:
 	- https://en.cppreference.com/w/cpp/language/function_template

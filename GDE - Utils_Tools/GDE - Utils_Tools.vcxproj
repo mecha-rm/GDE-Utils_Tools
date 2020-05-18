@@ -135,7 +135,6 @@
     <ClCompile Include="utils\math\Rotation.cpp" />
     <ClCompile Include="utils\math\Shape.cpp" />
     <ClCompile Include="utils\math\Vector.cpp" />
-    <ClCompile Include="utils\PeriodicTable.cpp" />
     <ClCompile Include="utils\Random.cpp" />
     <ClCompile Include="utils\Timer.cpp" />
     <ClCompile Include="utils\Utils.cpp" />
@@ -154,9 +153,9 @@
     <ClInclude Include="utils\math\Rotation.h" />
     <ClInclude Include="utils\math\Shape.h" />
     <ClInclude Include="utils\math\Vector.h" />
-    <ClInclude Include="utils\PeriodicTable.h" />
     <ClInclude Include="utils\Random.h" />
     <ClInclude Include="utils\sort\BubbleSort.h" />
+    <ClInclude Include="utils\sort\CountSort.h" />
     <ClInclude Include="utils\sort\InsertionSort.h" />
     <ClInclude Include="utils\sort\MergeSort.h" />
     <ClInclude Include="utils\sort\QuickSort.h" />

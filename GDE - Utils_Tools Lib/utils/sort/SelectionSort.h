@@ -19,63 +19,63 @@ namespace util
 {
 	namespace sort
 	{
-		//// vector version
-		//template<typename T, typename A>
-		//void selectionSort(std::vector<T, A>& list)
-		//{
-		//	// the size of the list.
-		//	const int SIZE = list.size();
+		// vector version
+		template<typename T, typename A>
+		void selectionSort(std::vector<T, A>& list)
+		{
+			// the size of the list.
+			const int SIZE = list.size();
 
-		//	// the iteration of the list.
-		//	for (int iter = 0; iter < SIZE - 1; iter++) 
-		//	{
-		//		// gets the smallest index.
-		//		int smallestIndex = iter;
+			// the iteration of the list.
+			for (int iter = 0; iter < SIZE - 1; iter++) 
+			{
+				// gets the smallest index.
+				int smallestIndex = iter;
 
-		//		// goes through each index, finding hte smallest one.
-		//		for (int i = iter + 1; i < SIZE; i++)
-		//		{
-		//			if (list[i] < list[smallestIndex])
-		//				smallestIndex = i;
-		//		}
+				// goes through each index, finding hte smallest one.
+				for (int i = iter + 1; i < SIZE; i++)
+				{
+					if (list[i] < list[smallestIndex])
+						smallestIndex = i;
+				}
 
-		//		// swaps values.
-		//		if (iter != smallestIndex)
-		//		{
-		//			T temp = list[iter];
+				// swaps values.
+				if (iter != smallestIndex)
+				{
+					T temp = list[iter];
 
-		//			list[iter] = list[smallestIndex];
-		//			list[smallestIndex] = temp;
-		//		}
-		//	}
-		//}
+					list[iter] = list[smallestIndex];
+					list[smallestIndex] = temp;
+				}
+			}
+		}
 
-		//// array version
-		//template<typename T>
-		//void selectionSort(T* list, const int SIZE)
-		//{
-		//	// the iteration of the list.
-		//	for (int iter = 0; iter < SIZE - 1; iter++)
-		//	{
-		//		// gets the smallest index.
-		//		int smallestIndex = iter;
+		// array version
+		template<typename T>
+		void selectionSort(T* list, const int SIZE)
+		{
+			// the iteration of the list.
+			for (int iter = 0; iter < SIZE - 1; iter++)
+			{
+				// gets the smallest index.
+				int smallestIndex = iter;
 
-		//		// goes through each index, finding hte smallest one.
-		//		for (int i = iter + 1; i < SIZE; i++)
-		//		{
-		//			if (list[i] < list[smallestIndex])
-		//				smallestIndex = i;
-		//		}
+				// goes through each index, finding hte smallest one.
+				for (int i = iter + 1; i < SIZE; i++)
+				{
+					if (list[i] < list[smallestIndex])
+						smallestIndex = i;
+				}
 
-		//		// swaps values.
-		//		if (iter != smallestIndex)
-		//		{
-		//			T temp = list[iter];
+				// swaps values.
+				if (iter != smallestIndex)
+				{
+					T temp = list[iter];
 
-		//			list[iter] = list[smallestIndex];
-		//			list[smallestIndex] = temp;
-		//		}
-		//	}
-		//}
+					list[iter] = list[smallestIndex];
+					list[smallestIndex] = temp;
+				}
+			}
+		}
 	}
 }
