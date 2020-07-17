@@ -129,7 +129,6 @@
     <ClCompile Include="utils\math\Interpolation.cpp" />
     <ClCompile Include="utils\math\LargeInt.cpp" />
     <ClCompile Include="utils\math\Matrix.cpp" />
-    <ClCompile Include="utils\math\Object.cpp" />
     <ClCompile Include="utils\math\Point.cpp" />
     <ClCompile Include="utils\math\Quaternion.cpp" />
     <ClCompile Include="utils\math\Rotation.cpp" />
@@ -147,7 +146,6 @@
     <ClInclude Include="utils\math\LargeInt.h" />
     <ClInclude Include="utils\math\MathLib.h" />
     <ClInclude Include="utils\math\Matrix.h" />
-    <ClInclude Include="utils\math\Object.h" />
     <ClInclude Include="utils\math\Point.h" />
     <ClInclude Include="utils\math\Quaternion.h" />
     <ClInclude Include="utils\math\Rotation.h" />
