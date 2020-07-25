@@ -36,9 +36,6 @@
     <ClInclude Include="utils\math\Matrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="utils\math\Object.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="utils\math\Point.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -66,10 +63,31 @@
     <ClInclude Include="utils\UtilsToolsLib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="utils\Timer.h">
+    <ClInclude Include="utils\math\Shape.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\sort\BubbleSort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\sort\InsertionSort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\sort\MergeSort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\sort\QuickSort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\sort\SelectionSort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\sort\Sort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="utils\Random.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\Timer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -90,9 +108,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="utils\math\Matrix.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="utils\math\Object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="utils\math\Point.cpp">
@@ -116,10 +131,13 @@
     <ClCompile Include="utils\Utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="utils\Timer.cpp">
+    <ClCompile Include="utils\math\Shape.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="utils\Random.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\Timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

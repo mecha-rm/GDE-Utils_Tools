@@ -1,7 +1,11 @@
 /*
  * Author: Roderick "R.J." Montague (100701758)
  * Date: 05/01/2019
- * Description: a project that contains various utility functions
+ * Description: a project that contains various utility functions 
+	* NOTE: due to some error I don't understand, the definition of the friend functions for the >> and << operators broke the project.
+		- Moving these definitions to the header files fixed this error, and I'm going to update the lib file and github repository to reflect this change.
+		- I don't understand why this all happened, but I'm thinking it may have been due to a Windows 10 update or something.
+ * References:
 */
 
 // #include "Utils.h"
@@ -202,7 +206,7 @@ void sortTest(int mode)
 		std::cout << "\nBefore Sort:" << std::endl;
 
 		// printing the values before the sort.
-		std::cout << "\nList1:";
+		std::cout << "\nList1: ";
 		printArray<int>(list1, SIZE);
 		
 		std::cout << "\nList2: ";
@@ -211,7 +215,7 @@ void sortTest(int mode)
 		std::cout << "\nList3: ";
 		printVector(list3);
 		
-		std::cout << "\n\n";
+		std::cout << "\n\n**********\n";
 
 		// runs sorting algorithms and times them.
 		// mode selector
@@ -300,6 +304,7 @@ void sortTest(int mode)
 
 		}
 
+		std::cout << "**********\n";
 		std::cout << "\nAfter Sort:" << std::endl;
 
 		// printing the values after the sort.
@@ -337,7 +342,7 @@ int main()
 	randomTest();
 
 	// array sort test
-	sortTest(3);
+	sortTest(4);
 
 
 	system("pause");

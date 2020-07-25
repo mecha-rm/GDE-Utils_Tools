@@ -24,22 +24,10 @@
     <ClCompile Include="utils\math\Interpolation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="utils\math\LargeInt.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="utils\math\Matrix.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="utils\math\Point.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="utils\math\Quaternion.cpp">
+    <ClCompile Include="utils\math\Object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="utils\math\Rotation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="utils\math\Vector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="utils\Array.cpp">
@@ -60,6 +48,21 @@
     <ClCompile Include="utils\Random.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="utils\math\LargeInt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\math\Matrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\math\Point.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\math\Quaternion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\math\Vector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="utils\math\Collision.h">
@@ -74,19 +77,10 @@
     <ClInclude Include="utils\math\MathLib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="utils\math\Matrix.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="utils\math\Point.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="utils\math\Quaternion.h">
+    <ClInclude Include="utils\math\Object.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="utils\math\Rotation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="utils\math\Vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="utils\Array.h">
@@ -107,13 +101,16 @@
     <ClInclude Include="utils\math\Shape.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="utils\sort\Sort.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="utils\Timer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="utils\sort\BubbleSort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\sort\Sort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\sort\SelectionSort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="utils\sort\InsertionSort.h">
@@ -125,13 +122,22 @@
     <ClInclude Include="utils\sort\QuickSort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="utils\sort\SelectionSort.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="utils\Random.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="utils\sort\CountSort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\math\Matrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\math\Point.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\math\Quaternion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\math\Vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

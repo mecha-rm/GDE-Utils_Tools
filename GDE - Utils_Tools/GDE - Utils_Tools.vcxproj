@@ -22,7 +22,6 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{21A81622-66AF-4837-A0D0-4AF584C8BB80}</ProjectGuid>
     <RootNamespace>GDEUtilsTools</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -40,8 +39,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -86,6 +85,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -129,6 +129,7 @@
     <ClCompile Include="utils\math\Interpolation.cpp" />
     <ClCompile Include="utils\math\LargeInt.cpp" />
     <ClCompile Include="utils\math\Matrix.cpp" />
+    <ClCompile Include="utils\math\Object.cpp" />
     <ClCompile Include="utils\math\Point.cpp" />
     <ClCompile Include="utils\math\Quaternion.cpp" />
     <ClCompile Include="utils\math\Rotation.cpp" />
@@ -146,6 +147,7 @@
     <ClInclude Include="utils\math\LargeInt.h" />
     <ClInclude Include="utils\math\MathLib.h" />
     <ClInclude Include="utils\math\Matrix.h" />
+    <ClInclude Include="utils\math\Object.h" />
     <ClInclude Include="utils\math\Point.h" />
     <ClInclude Include="utils\math\Quaternion.h" />
     <ClInclude Include="utils\math\Rotation.h" />
