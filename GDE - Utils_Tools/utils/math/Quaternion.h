@@ -2,6 +2,8 @@
  * Author: Roderick "R.J." Montague (100701758)
  * Date: 05/01/2019
  * Description: a project that contains a quaternion class
+ * References:
+	* https://docs.microsoft.com/en-us/cpp/cpp/extern-cpp?view=vs-2019
 */
 #include "Vector.h"
 #include <string>
