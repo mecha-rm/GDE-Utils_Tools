@@ -1,6 +1,6 @@
 /*
  * Author: Roderick "R.J." Montague (100701758)
- * Date: 05/01/2019
+ * Date: 08/20/2020
  * Description: a project that contains various utility functions 
 	* NOTE: due to some error I don't understand, the definition of the friend functions for the >> and << operators broke the project.
 		- Moving these definitions to the header files fixed this error, and I'm going to update the lib file and github repository to reflect this change.
