@@ -190,6 +190,64 @@ namespace util
 		vector.push_back(val);
 		return true;
 	}
+
+	// inserts an element into a pointer vector if it isn't already in there. 
+	// if it's less than 0, it's placed at the start. If the index is greater than the vector size, it's placed at the end.
+	template<typename T>
+	bool insertIntoVector(std::vector<T*>& vector, int index, T* val) // Because of the current C++ version, the definition is placed here.
+	{
+		for (T* item : vector) // if the vector already contains the pointer, it is not added.
+		{
+			if (item == val)
+				return false;
+		}
+
+		// adds value
+		if (index < 0) // negative index
+		{
+			vector.insert(vector.begin(), val);
+		}
+		else if (index >= vector.size()) // index exceeds size of list
+		{
+			vector.push_back(val);
+		}
+		else // valid index
+		{
+			vector.insert(vector.begin() + index, val);
+		}
+
+		return true;
+	}
+
+	// SHARED POINTER VERSION
+	// inserts an element into a pointer vector if it isn't already in there. 
+	// if it's less than 0, it's placed at the start. If the index is greater than the vector size, it's placed at the end.
+	template<typename T>
+	bool insertIntoVector(std::vector<std::shared_ptr<T>>& vector, int index, std::shared_ptr<T> val) // Because of the current C++ version, the definition is placed here.
+	{
+		for (std::shared_ptr<T> item : vector) // if the vector already contains the pointer, it is not added.
+		{
+			if (item == val)
+				return false;
+		}
+
+
+		// adds value
+		if (index < 0) // negative index
+		{
+			vector.insert(vector.begin(), val);
+		}
+		else if (index >= vector.size()) // index exceeds size of list
+		{
+			vector.push_back(val);
+		}
+		else // valid index
+		{
+			vector.insert(vector.begin() + index, val);
+		}
+
+		return true;
+	}
 	
 	// STANDARD POINTER VERSION
 	// removes an element from a vector if it is present.
