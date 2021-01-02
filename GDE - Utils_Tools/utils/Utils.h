@@ -283,6 +283,14 @@ namespace util
 		return false;
 	}
 
+	// combines two vectors into one vector and returns it.
+	template<typename T>
+	std::vector<T> combineVectors(const std::vector<T>& V1, const std::vector<T>& V2)
+	{
+		std::vector<T> vx = V1;
+		vx.insert(vx.end(), V2.begin(), V2.end());
+		return vx;
+	}
 }
 
 #endif // !UTILITIES_H
