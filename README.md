@@ -18,3 +18,5 @@ TODO:
 - complete sorting techniques and test all of them.
 - finish periodic table.
 - complete randomizer functions.
+
+This project likely won't be updated anymore.
